@@ -37,11 +37,22 @@ function checkPasswordStrenght(params) {
         /**controlli in base ai caratteri inseriti */
         if (pwd.length >= 8) {
             _v.passwordStrenght[0].classList.add('active');
+            if (regexCount(/[&%?!]/g, pwd === 1)) {
+                _v.passwordStrenght[1].classList.add('active')
+            }
+            isValid.isLow = true;
         }
+        if (pwd.length >= 10 && regexCount(/[&%?!]/g, pwd) >= 2) {
+            _v.passwordStrenght[0].classList.add('active');
+            _v.passwordStrenght[1].classList.add('active');
+            _v.passwordStrenght[2].classList.add('active');
+            isValid.isHigh = true;
+        }
+        _v.isValidPassword = (isValid.isLow || isValid.isHigh) ? true : false;
     });
 }
 
 function regexCount(pattern, password) {
-    return (password.match(pattern)).length;
+    return (password.match(pattern) || []).length;
 }
 export default formValidation;
