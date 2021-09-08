@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: mediumblue;
+}
+#main-wrapper{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background-color: #fff;
+}
+#main-wrapper h1{
+    text-align: center;
+}
+#main-wrapper #form-registrazione{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+#main-wrapper #form-registrazione input{
+    margin: 10px;
+}

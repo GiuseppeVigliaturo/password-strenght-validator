@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-wrapper">
+        <h1>Registrazione</h1>
+
+        <form action="#" id="form-registrazione" method="POST">
+            <div id="wrapper-input">
+                <input type="text" name="nome" placeholder="Nome" value="" required>
+
+                <div id="password">
+                    <input type="password" name="password" placeholder="Password (min. 8 caratteri)">
+                    <span id="l_1"></span>
+                    <span id="l_2"></span>
+                    <span id="l_3"></span>
+                </div>
+                <input type="password" name="re_password" placeholder="Conferma password" value="" required>
+
+                <input type="checkbox" name="terms" required>
+    
+                <span class="fs-small">Ho letto e accettato il <a href="#">trattamento dei dati</a></span>
+            </div>
+            <input type="submit" value="Registrati">
+        </form>
+        <div id="notifica-registrazione"></div>
+    </div>
+    <script type="module">
+        import formValidation from './lib.js';
+        document.addEventListener('DOMContentLoaded',function()  {
+            formValidation('#form-registrazione','#notifica-registrazione')
+        })
+    </script>
+    
+</body>
+</html>
